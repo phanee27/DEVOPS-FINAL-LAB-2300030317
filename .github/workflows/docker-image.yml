@@ -30,6 +30,7 @@ jobs:
           file: ./springbootproject/backend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/2300030317-lab-backend:latest
+          platforms: linux/arm64, linux/amd64
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
@@ -38,3 +39,4 @@ jobs:
           file: ./reactapp/frontend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/2300030317-lab-frontend:latest
+          platforms: linux/arm64, linux/amd64
